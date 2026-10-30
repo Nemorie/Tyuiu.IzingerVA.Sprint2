@@ -19,30 +19,62 @@ namespace Tyuiu.IzingerVA.Sprint2.Task6.V6.Lib
                 m = value2;
             }
 
-            string cardValue = k switch
+            string cardValue;
+            switch (k)
             {
-                6 => "шестерка",
-                7 => "семерка",
-                8 => "восьмерка",
-                9 => "девятка",
-                10 => "десятка",
-                11 => "валет",
-                12 => "дама",
-                13 => "король",
-                14 => "туз",
-                _ => throw new ArgumentException($"Недопустимое достоинство карты: {k}")
-            };
+                case 6:
+                    cardValue = "шестерка";
+                    break;
+                case 7:
+                    cardValue = "семерка";
+                    break;
+                case 8:
+                    cardValue = "восьмерка";
+                    break;
+                case 9:
+                    cardValue = "девятка";
+                    break;
+                case 10:
+                    cardValue = "десятка";
+                    break;
+                case 11:
+                    cardValue = "валет";
+                    break;
+                case 12:
+                    cardValue = "дама";
+                    break;
+                case 13:
+                    cardValue = "король";
+                    break;
+                case 14:
+                    cardValue = "туз";
+                    break;
+                default:
+                    cardValue = "неизвестно";
+                    break;
+            }
 
-            string cardSuit = m switch
+            string cardSuit;
+            switch (m)
             {
-                1 => "пик",
-                2 => "треф",
-                3 => "бубен",
-                4 => "червей",
-                _ => throw new ArgumentException($"Недопустимая масть карты: {m}")
-            };
+                case 1:
+                    cardSuit = "пик";
+                    break;
+                case 2:
+                    cardSuit = "треф";
+                    break;
+                case 3:
+                    cardSuit = "бубен";
+                    break;
+                case 4:
+                    cardSuit = "червей";
+                    break;
+                default:
+                    cardSuit = "неизвестно";
+                    break;
+            }
 
-            return $"{cardValue} {cardSuit}";
+            return cardValue + " " + cardSuit;
         }
     }
 }
